@@ -1,3 +1,4 @@
+
 import pygame
 class GoLView:
 
@@ -18,3 +19,4 @@ class GoLView:
             for y in range(0, int(self.height * 4/5), blockSize):
                 rect = pygame.Rect(x, y, blockSize, blockSize)
                 pygame.draw.rect(self._DS, (0,0,0), rect, 1)
+                
