@@ -8,9 +8,8 @@ class GoLView:
         self._DS = pygame.display.set_mode((self.width,self.height))
 
     def update(self):
-        self._DS.fill((150, 224, 171))
+        self._DS.fill((100,100,100))
         self.drawGrid()
-      
         pygame.display.update()
 
     def drawGrid(self):
