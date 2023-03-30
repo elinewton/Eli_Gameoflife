@@ -3,52 +3,47 @@ class Model:
     def __init__(self,width,height):
         self.width = width
         self.height = height
-        self.rows = int(self.width/20)
-        self.columns = int(self.height/20)
+        self.rows = int(self.width/20) + 1
+        self.columns = int(self.height/20) + 1
+        self.grid = [[0]*self.columns]*self.rows
 
-#Rules for Game of Life
-#if cell == alive && cell_neighbors == 2 or cell_neighbors == 3:
- #   cell == alive
-
-#if cell == alive && cell_neighbors <= 1:
-  #  cell == dead
-
-#if cell == dead && cell_neighbors == 3:
- #   cell == alive
-
-
-    def alive(self,alive):
-        self.alive = 1
+    def toggleCell(self,i,j):
+        cell = self.grid[i+1][j+1] = ((self.grid[i+1][j+1] + 1)%2)
+        return cell
     
+    def currentGrid(self):
+        return [self.grid[r][1:-1]for r in range(1,self.rows)]
+
+    def cellCount(self,i,j):
+        count = 0
+        for r in range(i-1,i+2):
+            for c in range(j-1,j+2):
+                count += self.grid[r][c]
+        count -= self.grid[r][c]
+        return count
+
 
     def updateGrid(self,cellCount,grid):
+        next = [[0]*self.columns]*self.rows
         cellCount = 0
         self.grid = grid
         for i in range(self.rows):
             for j in range(self.columns):
                 mid = [i,j]
-                for r in range(i-1,i+2):
-                    for c in range(j-1,j+2):
-                        c = grid[r][c]
-                        if c == 1:
-                            cellCount += 1
-                        next[i][j] = checkLife(cellCount)
+                cell_Life = self.checkLife(cellCount(i,j),i,j)
+                next[i][j] = cell_Life
+        self.grid = next
+                
 
+    def checkLife(self,cellCount,i,j):
+        if ((self.grid[i][j] == 1) and ((cellCount == 2) or (cellCount == 3))):
+            return 1
 
-    def checkLife(self,cellCount):
-        self.cell = int(cell)
-        cellCount = 0
-        if ((self.cell == self.alive) and ((cellCount == 2) or (cellCount == 3))):
-            self.cell = self.alive
+        elif ((self.grid[i][j] == 1) and (cellCount <=1)):
+            return 0
 
-        elif ((self.cell == self.alive) and (cellCount <=1)):
-            self.cell = 0
-
-        elif ((self.cell == 0) and (cellCount == 3)):
-            self.cell = self.alive
-
-
-
+        elif ((self.grid[i][j] == 0) and (cellCount == 3)):
+            return 1
             
 
         
