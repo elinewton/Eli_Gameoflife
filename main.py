@@ -1,5 +1,7 @@
 import sys,pygame
 from view import GoLView
+from model import GoLModel
+from controller import GoLController
 
 def rungame():
     pygame.init()
