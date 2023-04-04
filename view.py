@@ -3,8 +3,8 @@ import pygame
 class GoLView:
 
     def __init__(self):
-        self.width = 1000
-        self.height = 700 
+        self.width = 200
+        self.height = 200 
         self._DS = pygame.display.set_mode((self.width,self.height))
 
     def update(self):
