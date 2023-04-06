@@ -5,12 +5,13 @@ from model import Model
 class GoLView:
 
     def __init__(self):
-        self.width = 1000
-        self.height = 700 
+        self.width = 200
+        self.height = 200 
         self._DS = pygame.display.set_mode((self.width,self.height))
         pygame.display.set_caption('Game of Life')
 
     def update(self):
+
         self._DS.fill((200, 200, 200))
         self.drawGrid()
         self.drawBox(100, 600)
@@ -19,6 +20,8 @@ class GoLView:
         self.drawBox(800, 600)
         self.cellChange()
       
+
+
         pygame.display.update()
 
 
