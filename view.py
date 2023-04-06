@@ -3,14 +3,13 @@ import pygame
 class GoLView:
 
     def __init__(self):
-        self.width = 1000
-        self.height = 700 
+        self.width = 200
+        self.height = 200 
         self._DS = pygame.display.set_mode((self.width,self.height))
 
     def update(self):
-        self._DS.fill((150, 224, 171))
+        self._DS.fill((100,100,100))
         self.drawGrid()
-      
         pygame.display.update()
 
     def drawGrid(self):
