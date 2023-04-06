@@ -1,14 +1,14 @@
 import pygame
+
+from pygame.math import Vector2
+from model import Model
 from view import GoLView
-from model import GoLModel
 
-class GoLController:
-    def __init__(self,model,view):
-        self.model = model
-        self.view = view
+class Controller:
 
-    def eventDispatch(self,event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            self.mouseCtrl(event)
 
+
+    #def cellChange(self, event):
+        #if event.type == pygame.MOUSEBUTTONDOWN:
+         #   self._DS.fill((255,255,0))
     

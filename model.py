@@ -8,6 +8,7 @@ class GoLModel:
         self.grid = [[0]*self.columns for i in range(self.rows)]      
 
 
+
     def toggleCell(self,i,j):
         cell = self.grid[i+1][j+1] = ((self.grid[i+1][j+1] + 1)%2)
         return cell
