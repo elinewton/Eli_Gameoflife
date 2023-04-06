@@ -4,6 +4,8 @@ class Model:
         self.width = width
         self.height = height
 
+    
+
 #Rules for Game of Life
 #if cell == alive && cell_neighbors == 2 or cell_neighbors == 3:
  #   cell == alive
