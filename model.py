@@ -6,9 +6,7 @@ class GoLModel:
         self.rows = int(self.width/20) + 2
         self.columns = int(self.height/20) + 2 
         self.grid = [[0]*self.columns for i in range(self.rows)]      
-        self.grid[2][3] = 1
-        self.grid[4][3] = 1
-        self.grid[3][3] = 1
+
 
     def toggleCell(self,i,j):
         cell = self.grid[i+1][j+1] = ((self.grid[i+1][j+1] + 1)%2)
@@ -51,12 +49,3 @@ class GoLModel:
         else:
             return 0
 
-if __name__ == '__main__':
-    model = GoLModel(100,100)
-    for r in range(len(model.grid)):
-        print(model.grid[r])
-    model.updateGrid()
-    print("")
-    for r in model.grid:
-        print(r)
-        
