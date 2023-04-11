@@ -13,7 +13,7 @@ def rungame():
 
 
     while True:
-        clock.tick(1)
+        clock.tick(10)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()

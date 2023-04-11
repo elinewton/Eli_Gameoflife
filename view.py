@@ -34,7 +34,7 @@ class GoLView:
         pygame.display.update()
 
     def drawCell(self,i,j):
-        pygame.draw.rect(self._DS, (255,255,0), pygame.Rect(i,j, 20, 20))
+        pygame.draw.rect(self._DS, (89, 255, 125), pygame.Rect(i,j, 20, 20))
 
 
     def drawCells(self,):
