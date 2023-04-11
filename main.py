@@ -9,6 +9,8 @@ def rungame():
     view = GoLView()
     model = GoLModel(view.width,view.height)
     ctrl = GoLController(view,model)
+    view.setModel(model)
+
 
     while True:
         clock.tick(1)

@@ -1,3 +1,4 @@
+import random
 
 class GoLModel:
     def __init__(self,width,height):
@@ -6,7 +7,7 @@ class GoLModel:
         self.rows = int(self.width/20) + 2
         self.columns = int(self.height/20) + 2 
         self.grid = [[0]*self.columns for i in range(self.rows)]      
-
+        self.fillRandom()
 
 
     def toggleCell(self,i,j):
@@ -23,6 +24,15 @@ class GoLModel:
                 count += self.grid[r][c]
         count -= self.grid[i][j]
         return count
+    
+    def fillRandom(self):
+        for i in range(0,self.rows-2):
+            for j in range(0,self.columns-2):
+                num = random.randint(0,10)
+                if num < 7:
+                    self.grid[i][j] = 1
+                else:
+                    self.grid[i][j] = 0
 
 
     def updateGrid(self):
