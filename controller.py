@@ -12,11 +12,12 @@ class GoLController:
         self.numcols = 1000//20
         self.numrows = 700//20
 
+    def eventDispatch(self,event):
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            self.mouseCtrl(event)
 
-
-
-
-
+    def mouseCtrl(self):
+        currloc = (pygame.mouse.get_pos())
     #def autofill(self):
 
     
