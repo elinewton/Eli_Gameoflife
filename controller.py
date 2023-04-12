@@ -18,6 +18,8 @@ class GoLController:
 
     def mouseCtrl(self):
         currloc = (pygame.mouse.get_pos())
+    
     #def autofill(self):
+        
 
     

@@ -22,14 +22,14 @@ class GoLView:
     
     def update(self):
         self.grid = self.model.currentGrid()  
-        self._DS.fill((200, 200, 200))
+        self._DS.fill((115, 117, 116))
         self.drawCells()
         self.drawGrid()
         self.drawBox(100, 600)
         self.drawBox(300, 600)
         self.drawBox(600, 600)
         self.drawBox(800, 600)
-        #self.cellChange()
+        self.drawPlayButton()
       
         pygame.display.update()
 
@@ -56,3 +56,7 @@ class GoLView:
 
     def drawBox(self, x, y):
         pygame.draw.rect(self._DS, (255,255,255), pygame.Rect(x, y, 90, 50), 2)
+
+    def drawPlayButton(self):
+        pygame.draw.circle(self._DS, (255,255,255), (500, 630), 30, width = 0)
+        pygame.draw.polygon(self._DS, (0,0,0), ((490,615), (490,645), (515,630)), width = 3)
