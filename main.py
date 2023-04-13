@@ -6,6 +6,9 @@ from pygame import mixer
 mixer.init()
 mixer.music.load('GoL Music.mp3')
 mixer.music.play()
+pygame.mixer.find_channel()
+bidenSound = pygame.mixer.Sound('Joe Biden GoL.mp3')
+pygame.mixer.Sound.play(bidenSound)
 
 
 def rungame():
@@ -13,7 +16,7 @@ def rungame():
     clock = pygame.time.Clock()
     view = GoLView()
     model = GoLModel(view.width,view.height)
-    ctrl = GoLController(view,model)
+    ctrl = GoLController(model,view)
     view.setModel(model)
 
 
@@ -26,7 +29,8 @@ def rungame():
             else:
                 ctrl.eventDispatch(event)
         
-        model.updateGrid()
+        if ctrl.go:
+            model.updateGrid()
         view.update()
         
 

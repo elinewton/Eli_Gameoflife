@@ -25,11 +25,11 @@ class GoLView:
         self._DS.fill((115, 117, 116))
         self.drawCells()
         self.drawGrid()
-        self.drawBox(100, 600)
-        self.drawBox(300, 600)
-        self.drawBox(600, 600)
-        self.drawBox(800, 600)
-        self.drawPlayButton()
+        self.b1 = self.drawBox(100, 600)
+        self.b2 = self.drawBox(275, 600)
+        self.b4 = self.drawBox(625, 600)
+        self.b5 = self.drawBox(800, 600)
+        self.drawStartStop()
       
         pygame.display.update()
 
@@ -55,8 +55,16 @@ class GoLView:
 
 
     def drawBox(self, x, y):
-        pygame.draw.rect(self._DS, (255,255,255), pygame.Rect(x, y, 90, 50), 2)
+        r = pygame.Rect(x,y,100,50)
+        pygame.draw.rect(self._DS, (255,255,255), r, width = 0)
+        return r
 
-    def drawPlayButton(self):
-        pygame.draw.circle(self._DS, (255,255,255), (500, 630), 30, width = 0)
-        pygame.draw.polygon(self._DS, (0,0,0), ((490,615), (490,645), (515,630)), width = 3)
+    def drawStartStop(self):
+        self.drawBox(450,600)
+        pygame.draw.polygon(self._DS, (0,0,0), ((490,610), (490,640), (515,625)), width = 3)
+
+    def InStartStop(self, pos):
+        return pygame.Rect(450,600,100,50).collidepoint(pos)
+        
+    def inB1(self,pos):
+        return self.b1.collidepoint(pos)
