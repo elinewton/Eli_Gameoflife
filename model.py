@@ -6,8 +6,7 @@ class GoLModel:
         self.height = height
         self.rows = int(self.width/20) + 2
         self.columns = int(self.height/20) + 2 
-        self.grid = [[0]*self.columns for i in range(self.rows)]      
-        self.fillRandom()
+        self.grid = [[0]*self.columns for i in range(self.rows)]
 
 
     def toggleCell(self,i,j):
@@ -29,7 +28,7 @@ class GoLModel:
         for i in range(0,self.rows-2):
             for j in range(0,self.columns-2):
                 num = random.randint(0,10)
-                if num < 7:
+                if num < 6:
                     self.grid[i][j] = 1
                 else:
                     self.grid[i][j] = 0

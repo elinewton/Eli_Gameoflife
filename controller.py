@@ -11,24 +11,14 @@ class GoLController:
         self.view = view
         self.numcols = 1000//20
         self.numrows = 700//20
+        self.go = False
 
     def eventDispatch(self,event):
         if event.type == pygame.MOUSEBUTTONDOWN:
-            self.mouseCtrl(event)
+            pos = pygame.mouse.get_pos()
+            if self.view.InStartStop(pos) == True:
+                self.go = not self.go
+            elif self.view.inB1(pos) == True:
+                self.model.fillRandom()
 
-    def mouseCtrl(self):
-        currloc = (pygame.mouse.get_pos())
-    
-    #def autofill(self):
-        
-
-    #def cellChange(self, event):
-        #if event.type == pygame.MOUSEBUTTONDOWN:
-         #   self._DS.fill((255,255,0))
-        
-    def highlightCell(self):
-        blockSize = 20 #Set the size of the grid block
-        for x in range(0, self.width, blockSize):
-            for y in range(0, int(self.height * 4/5), blockSize):
-                #if event.type == pygame.MOUSEBUTTONUP and pygame.mouse.get_pos() <= (x,y) and pygame.mouse.get_pos() >= (x+blockSize,y+blockSize):
 
