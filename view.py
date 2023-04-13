@@ -1,24 +1,25 @@
 import pygame
 
-from model import Model
+from model import GoLModel
 
 class GoLView:
 
     def __init__(self):
-        self.width = 200
-        self.height = 200 
+        self.width = 1000
+        self.height = 700 
         self._DS = pygame.display.set_mode((self.width,self.height))
-        pygame.display.set_caption('Game of Life')
+        pygame.display.set_caption('Conways Game of Life')
 
     def update(self):
 
         self._DS.fill((200, 200, 200))
         self.drawGrid()
-        self.drawBox(100, 600)
-        self.drawBox(300, 600)
-        self.drawBox(600, 600)
-        self.drawBox(800, 600)
-        self.cellChange()
+        self.drawButton(100, 600)
+        self.drawButton(300, 600)
+        self.drawButton(600, 600)
+        self.drawButton(800, 600)
+        self.updateGrid()
+        #self.cellChange()
       
 
 
@@ -34,5 +35,5 @@ class GoLView:
                 pygame.draw.rect(self._DS, (0,0,0), rect, 1)
 
 
-    def drawBox(self, x, y):
+    def drawButton(self, x, y):
         pygame.draw.rect(self._DS, (255,255,255), pygame.Rect(x, y, 90, 50), 2)
