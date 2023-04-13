@@ -6,14 +6,16 @@ from model import GoLModel
 class GoLView:
 
     def __init__(self):
+
         self.model = None
         self.width = 1000
         self.height = 700 
         self.grid = None
         self.rows = int(self.width/20) + 2
         self.columns = int((self.height*4/5)/20) + 2  
+
         self._DS = pygame.display.set_mode((self.width,self.height))
-        pygame.display.set_caption('Game of Life')
+        pygame.display.set_caption('Conways Game of Life')
 
     def setModel(self,model):
         self.model = model

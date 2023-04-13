@@ -22,8 +22,3 @@ class GoLController:
                 self.model.fillRandom()
 
 
-                
-
-        
-    
-    #def autofill(self):
