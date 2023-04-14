@@ -20,5 +20,9 @@ class GoLController:
                 self.go = not self.go
             elif self.view.inB1(pos) == True:
                 self.model.fillRandom()
+            elif self.view.inB2(pos) == True:
+                self.model.clearGrid()
+            elif self.view.inb4(pos) == True:
+                
 
 
