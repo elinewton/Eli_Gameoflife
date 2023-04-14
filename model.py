@@ -25,13 +25,20 @@ class GoLModel:
         return count
     
     def fillRandom(self):
-        for i in range(0,self.rows-2):
-            for j in range(0,self.columns-2):
+        for i in range(0,self.rows-1):
+            for j in range(0,self.columns-1):
                 num = random.randint(0,10)
                 if num < 6:
                     self.grid[i][j] = 1
                 else:
                     self.grid[i][j] = 0
+
+    def clearGrid(self):
+        for i in range(0,self.rows-1):
+            for j in range(0,self.columns-1):
+                self.grid[i][j] = 0
+        
+
 
 
     def updateGrid(self):

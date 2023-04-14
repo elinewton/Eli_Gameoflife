@@ -27,8 +27,8 @@ class GoLView:
         self._DS.fill((115, 117, 116))
         self.drawCells()
         self.drawGrid()
-        self.b1 = self.drawBox(100, 600)
-        self.b2 = self.drawBox(275, 600)
+        self.b1 = self.drawBox(100, 600) #random fill button
+        self.b2 = self.drawBox(275, 600) #
         self.b4 = self.drawBox(625, 600)
         self.b5 = self.drawBox(800, 600)
         self.drawStartStop()
@@ -67,6 +67,21 @@ class GoLView:
 
     def InStartStop(self, pos):
         return pygame.Rect(450,600,100,50).collidepoint(pos)
+    
+    def drawText(self):
+        black = (0,0,0)
+        font = pygame.font.Font('timesnewroman', 10)
+        button1 = pygame.Font.render('Random Fill', 10, black, (255,255,255))
         
     def inB1(self,pos):
         return self.b1.collidepoint(pos)
+    
+    def inB2(self,pos):
+        return self.b2.collidepoint(pos)
+    
+    def inB4(self,pos):
+        return self.b4.collidepoint(pos)
+    
+    def inB5(self,pos):
+        return self.b5.collidepoint(pos)
+    
