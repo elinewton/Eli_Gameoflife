@@ -11,6 +11,8 @@ bidenSound = pygame.mixer.Sound('Joe Biden GoL.mp3')
 pygame.mixer.Sound.play(bidenSound)
 
 
+
+
 def rungame():
     pygame.init()
     clock = pygame.time.Clock()
