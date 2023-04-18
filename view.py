@@ -28,7 +28,7 @@ class GoLView:
         self.drawCells()
         self.drawGrid()
         self.b1 = self.drawBox(100, 600) #random fill button
-        self.b2 = self.drawBox(275, 600) #
+        self.b2 = self.drawBox(275, 600) #clear button
         self.b4 = self.drawBox(625, 600)
         self.b5 = self.drawBox(800, 600)
         self.drawStartStop()
@@ -38,6 +38,7 @@ class GoLView:
     def drawCell(self,i,j):
         pygame.draw.rect(self._DS, (89, 255, 125), pygame.Rect(i,j, 20, 20))
 
+    
 
     def drawCells(self,):
         for i in range(0,self.rows-1):
@@ -68,10 +69,18 @@ class GoLView:
     def InStartStop(self, pos):
         return pygame.Rect(450,600,100,50).collidepoint(pos)
     
+    def inGrid(self,pos):
+        return pygame.Rect(0,0,1000,560).collidepoint(pos)
+            
+    def drawCellatpos(self,pos):
+        self.model.toggleCellAt(pos)
+
+
     def drawText(self):
         black = (0,0,0)
         font = pygame.font.Font('timesnewroman', 10)
         button1 = pygame.Font.render('Random Fill', 10, black, (255,255,255))
+
         
     def inB1(self,pos):
         return self.b1.collidepoint(pos)
@@ -84,4 +93,5 @@ class GoLView:
     
     def inB5(self,pos):
         return self.b5.collidepoint(pos)
+    
     
