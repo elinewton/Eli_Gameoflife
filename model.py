@@ -38,7 +38,8 @@ class GoLModel:
             for j in range(0,self.columns-1):
                 self.grid[i][j] = 0
         
-
+    def toggleCellAt(self,pos):
+        self.grid[((pos[0]//20)+1)][((pos[1]//20)+1)] = (self.grid[((pos[0]//20)+1)][((pos[1]//20)+1)] +1) % 2
 
 
     def updateGrid(self):
